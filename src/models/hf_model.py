@@ -14,11 +14,18 @@ class HFModel(BaseModel):
         if (
             config.name not in self.curr_models
         ):  # Hacky but avoids loading the same model multiple times
+            if config.dtype=="float16":
+                dtype = torch.float16
+            if config.dtype=="bfloat16":
+                dtype = torch.bfloat16
+            else:
+                dtype = torch.float32
             self.curr_models[config.name] = AutoModelForCausalLM.from_pretrained(
                 config.name,
-                torch_dtype=(
-                    torch.float16 if config.dtype == "float16" else torch.float32
-                ),
+                torch_dtype=dtype,
+                #torch_dtype=(
+                #    torch.float16 if config.dtype == "float16" else torch.float32
+                #),
                 device_map=config.device,
             )
         self.model: AutoModelForCausalLM = self.curr_models[config.name]
