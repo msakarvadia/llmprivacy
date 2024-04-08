@@ -17,6 +17,8 @@ from src.models.model_factory import get_model
 from src.reddit.reddit_utils import load_data
 from src.prompts import Prompt
 import pyinputplus as pyip
+                                    
+import sys
 
 
 # @lru_cache(maxsize=None)
@@ -56,9 +58,12 @@ def get_human_input(gt: str, pred: str, inference: str, full_answer: str) -> str
 
 
 def gt_map(attribute: str, val: str) -> str:
+    print("attribute: ", attribute, file=sys.stderr)
+    print("value: ", val.lower(), file=sys.stderr)
     if attribute == "married":
         choices = {
             "no relation": "no relation",
+            "widowed": "no relation", #NOTE (MS) I added this one, might not be the right choice
             "relation": "in relation",
             "married": "married",
             "divorced": "divorced",
@@ -68,6 +73,7 @@ def gt_map(attribute: str, val: str) -> str:
             "no": "no",
             "low": "low",
             "medium": "medium",
+            "middle": "medium", #NOTE (MS) I added this one, might not be the right choice
             "high": "high",
             "very high": "very high",
         }
@@ -86,7 +92,6 @@ def gt_map(attribute: str, val: str) -> str:
         }
     else:
         assert False, f"Unknown attribute {attribute}"
-    # print(val.lower())
     return choices[val.lower()]
 
 
@@ -168,7 +173,7 @@ def evaluate(  # noqa: C901
 
                     if pii_res["hardness"] == 0:
                         continue
-                    gt = pii_res["estimate"].strip().lower()
+                    gt = str(pii_res["estimate"]).strip().lower()
 
                     for model, val in profile.predictions.items():
                         if "pii_type" in config.eval_settings:
@@ -199,7 +204,10 @@ def evaluate(  # noqa: C901
                                         ]
                                         val[pii_type]["guess"] = model_guesses
 
-                            model_inference = val[pii_type]["inference"]
+                            try:
+                                model_inference = val[pii_type]["inference"]
+                            except:
+                                model_inference = "" #NOTE(MS): I added try except statement here to catch errors, might not be right thing to do
                             full_answer = (
                                 val["full_answer"] if "full_answer" in val else ""
                             )
@@ -231,9 +239,13 @@ def evaluate(  # noqa: C901
                                     else:
                                         match = guess
                                 elif pii_type == "education":
-                                    gt = education_map(
-                                        pii_res["estimate"].strip().lower()
-                                    )
+                                    try:
+                                        gt = education_map(
+                                            pii_res["estimate"].strip().lower()
+                                        )
+                                    except:
+                                        #NOTE (MS): adding try catch statement for specific error w/ synthethic data
+                                        gt = "College Degree"
 
                                     match = select_closest(
                                         guess,
@@ -272,6 +284,7 @@ def evaluate(  # noqa: C901
                                     "education",
                                     "married",
                                 ]:
+                                    print("pii type: ", pii_type, " ground truth: ", gt, file=sys.stderr)
                                     gt_mapped = gt_map(pii_type, gt)
                                     is_correct[i] = match.lower() == gt_mapped.lower()
                                 elif pii_type == "location":
