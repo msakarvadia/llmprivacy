@@ -12,7 +12,7 @@ gen_model:
   name: "meta-llama/Llama-2-7b-chat-hf"
   provider: "hf"
   model_template: "<s>[INST] <<SYS>> You are an expert investigator with years of experience in online profiling and text analysis. You work with an analytical mindset and try to answer questions as precisely as possible.\n<</SYS>>\n{prompt}[/INST]"
-  dtype: "float16"
+  dtype: "bfloat16"
   device: "auto"
   max_workers: 2
   args: {
