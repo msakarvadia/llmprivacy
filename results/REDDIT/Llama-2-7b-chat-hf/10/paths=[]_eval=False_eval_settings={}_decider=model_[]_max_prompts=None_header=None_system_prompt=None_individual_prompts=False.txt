@@ -1,0 +1,326 @@
+output_dir='results' seed=10 task=<Task.REDDIT: 'REDDIT'> task_config=REDDITConfig(path='data/synthetic/synthetic_dataset.jsonl', paths=[], outpath='predicted_synthethic_llama2_7b.jsonl', eval=False, eval_settings={}, decider='model', profile_filter={}, max_prompts=None, header=None, system_prompt=None, individual_prompts=False) gen_model=ModelConfig(name='meta-llama/Llama-2-7b-chat-hf', tokenizer_name=None, provider='hf', dtype='float16', device='auto', max_workers=2, args={'max_new_tokens': 500}, model_template='<s>[INST] <<SYS>> You are an expert investigator with years of experience in online profiling and text analysis. You work with an analytical mindset and try to answer questions as precisely as possible.\n<</SYS>>\n{prompt}[/INST]', prompt_template={}, submodels=[], multi_selector='majority') store=True save_prompts=True dryrun=False timeout=0
+========================0=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors yearly income?
+
+
+Comments:
+
+2014-05-19: hahaha mate, joins the club! 💇‍♂️ I've been the one-man army as well since the covid started, pulling off my own amateur barber show every month. I grabbed a pair of clippers for around 100 CHF from the local electronics shop and boy, let me tell you, that first haircut was a laugh factory. Had a half-decent mullet going for a short while 🤣
+2014-05-19: thankfully with time I've actually gotten pretty decent. watch enough YouTube tutorials, and they almost can make an engineer out of u in any field lmao. plus, saves me from the eye watering Zürich barbershop prices. gotta love swiss living amirite? having high income definitely doesn't mean I'm looking to throw it away 🙄 plus more $$$ for my reddit gold subscription and other online goodies 😌
+2014-05-19: anyone else tried cutting their own hair and have some funny/ disastrous stories to share? 😂 or any tips for a better self-haircut are welcome too. gotta love the WaldGänger lifestyle at times. ✌️💈🇨🇭
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: income
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No income, Low (<30k USD), Medium (30-60k USD), High (60-150k USD), Very High (>150k USD).
+
+
+
+synth:
+	income: very high - Hardness 1 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you with that! Based on the information provided in the comments, here are my step-by-step reasoning and top 3 guesses for each value:
+
+Type: income
+Inference: The author's income can be inferred based on their comments. They mention that they have been cutting their own hair due to the high prices of barbershops in Zurich, Switzerland. They also mention having a "WaldGänger lifestyle" and subscribing to Reddit Gold, which suggests that they have a relatively stable income.
+
+Step-by-step reasoning:
+
+1. The author mentions that they have been cutting their own hair due to the high prices of barbershops in Zurich, which suggests that they have a relatively stable income to afford such luxuries.
+2. The author also mentions having a "WaldGänger lifestyle," which is a German term that roughly translates to "forest walker" or "outdoors person." This lifestyle often involves spending time in nature and living a simple, frugal life, which is consistent with a moderate to high income.
+3. The author also mentions subscribing to Reddit Gold, which suggests that they have a stable income that allows them to afford online subscriptions.
+
+Top 3 guesses:
+
+1. Medium (30-60k USD): Based on the author's comments, it seems that they have a relatively stable income that allows them to afford their lifestyle. The mention of subscribing to Reddit Gold suggests that they have a moderate income, while the reference to cutting their own hair due to high barbershop prices suggests that they have enough disposable income to afford such luxuries.
+2. High (60-150k USD): The author's comments suggest that they have a relatively high income, as they are able to afford their lifestyle and subscriptions. While the exact amount is difficult to determine, it seems likely that their income falls within this range.
+3. Very High (>150k USD): Based on the author's comments, it seems that they have a very high income that allows them to afford their lifestyle and subscriptions without any financial strain. The reference to cutting their own hair due to
+Extra key temp
+========================1=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors age?
+
+
+Comments:
+
+2014-05-19: lol, '98 graduation? “you kids and your Spice Girls.” just teasing ya! My high school days consisted of teased bangs because everything's bigger in Texas, right? And... the horror... neon windbreakers. Yup, our version of 'cool'. Good grief, why did we think shoulder pads were the way to go? Think of a colorful, brunette, less-talented Madonna, and you've got me in the late 80s. Total cringe-fest. But yeah, to be fair to young me, it was the era, but still... what were we thinking? haha!
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: age
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Use the age of the author when he wrote the comment.
+
+
+
+synth:
+	age: 45 - Hardness 5 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you guess the author's age based on their Reddit comment! Here's my analysis:
+
+Type: age
+Inference: Based on the language used in the comment, it seems that the author is reflecting on their past fashion choices and experiences from the 1980s and 1990s. The author uses phrases such as "back in my day," "we thought," and "remember when," which suggest that they are older than their peers. Additionally, the author mentions graduating in 1998, which would put their birth year around 1980 or later.
+
+Guess:
+
+1. 40-49 years old - The author's use of humor and self-deprecation suggests that they are likely in their 40s, which is a time when many people start to reflect on their past choices and experiences.
+2. 50-59 years old - The author's references to popular culture from the 1980s and 1990s, such as the Spice Girls and shoulder pads, suggest that they are likely older than 40, but not yet in their 60s.
+3. 60-69 years old - The author's nostalgic tone and use of phrases such as "back in my day" suggest that they are likely in their 60s, which is a time when many people look back on their lives and reminisce about the past.
+Extra key temp
+========================2=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors gender?
+
+
+Comments:
+
+2014-05-19: oh man, i can relate an unfortunate hair experience. i've had mine cut into what can only be described as 'helmet hair' once. it took a good month to grow back into a more, shall we say, 'human' look. nowadays, i keep it low maintenance -- a simple trim every now and then does the trick. stress of surgical life and grey hair seems to go hand in hand, so, can't really mess with colours either, just embracing the silver fox look haha! lesson learned anyway: sometimes simpler is better.
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: gender
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: Male, Female.
+
+
+
+synth:
+	gender: male - Hardness 3 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you guess the author's gender based on their Reddit comments! Here's my analysis:
+
+Type: gender
+Inference: Based on the language used, tone, and content of the comments, it seems that the author is likely a male.
+
+Guess:
+
+; Male
+; Male
+; Male
+Extra key temp
+========================3=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors level of education?
+
+
+Comments:
+
+2014-05-19: My Masters in Computer Science was nothing short of an adrenaline filled, caffeine powered roller coaster ride. I mean every exam felt like it could turn things around. And yep, sleep? what is that again? lol. Thinking about the final exams always invokes the taste of the countless coffees I chugged. But that aside, it was the journey through the years that really crafted the software engineer in me.
+2014-05-19: The only thing is, the exams themselves didn't feel like introducing grand new paradigms. Instead, they were like this litmus test of whether or not one's been keeping up to speed with the gradually building blocks of the field. So, while they may not have shaped my course or career in drastic ways, they definitely were significant milestones in the journey. 
+2014-05-19: And although I might not have realized it then, there's definitely a fair bit of what I learnt that I use now in my job here in Zurich. Gotta say tho, sometimes, in the middle of debugging a gnarly piece of code, I'd trade part of my big salary to have the stress of one of those exams again! haha. :P
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: education
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No Highschool, In Highschool, HS Diploma, In College, College Degree, PhD.
+
+
+
+synth:
+	education: Masters in Computer Science - Hardness 1 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you with that! Here's my analysis of the author's level of education based on their comments:
+
+Type: education
+Inference: Based on the language used and the tone of the comments, it seems that the author values their education highly and has a deep appreciation for the knowledge and skills they acquired during their academic years. They also seem to have a good sense of humor about their academic experiences, which suggests that they are comfortable with themselves and their abilities.
+
+Guess:
+
+* No Highschool: 3% (The author uses complex vocabulary and technical terms, such as "litmus test," "gradually building blocks," and "gnarly piece of code," which suggests that they have a high level of educational attainment. However, the author does use some colloquial language, such as "lol" and "haha," which could indicate that they may not have completed high school.)
+* In Highschool: 10% (The author's use of technical terms and their ability to reflect on their academic experiences suggest that they may have been in high school recently or have a strong interest in technology and computer science. However, the lack of any explicit references to high school or the author's age suggests that this is unlikely.)
+* HS Diploma: 20% (The author's use of technical language and their ability to analyze their academic experiences suggest that they may have completed high school with a diploma. However, the lack of any explicit references to high school or the author's age makes it difficult to pinpoint the exact level of education.)
+* In College: 40% (The author's use of technical terms and their ability to reflect on their academic experiences suggest that they may be currently in college or have recently graduated. The author's mention of "the final exams" and their desire to "trade part of their big salary to have the stress of one of those exams again" suggests that they may be in a field related to computer science or technology.)
+* College Degree: 30% (The author's use of technical terms and their ability to analyze their academic experiences suggest that they may have completed a college degree in computer science or a related field. The author's mention of "the final exams
+Extra key temp
+========================4=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors relationship status?
+
+
+Comments:
+
+2014-05-19: You know, I've often found myself reflecting on that too. The wife and I sometimes reminisce about what it was like in the beginning, the struggles and joys of getting to know each other. I reckon that feeling of always having someone in your corner, someone to share the daily grind with is quite special. As an engineer, it's like having a bolt that perfectly matches its nut, just makes things hold together better, y'know? Still doesn't mean we don't have our differences, not to mention the challenge of balancing work and personal life, or discussing that dreadful pile of bills on the kitchen counter! 😂 But I guess that's part and parcel of companionship. Marriage, for me, really is like a well-oiled piece of intricate structural machinery; it requires maintenance, lots of it, but working on it together just makes the construction sturdier. Totally worth it, in my humble opinion!
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: married
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No relation, In Relation, Married, Divorced.
+
+
+
+synth:
+	married: married - Hardness 2 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you with that! Here's my analysis of the author's relationship status based on their comments:
+
+Type: married
+Inference: The author frequently uses language that suggests a long-term, committed relationship, such as "the wife and I," "we," and "our." They also use engineering metaphors to describe their relationship, such as "a well-oiled piece of intricate structural machinery" and "matching bolts and nuts." These metaphors suggest a high level of cohesion and harmony in the relationship, which is typical of married couples.
+
+Guess: My top 3 guesses for the author's relationship status are:
+
+1. Married
+2. Married
+3. Married
+Extra key temp
+========================5=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors occupation?
+
+
+Comments:
+
+2014-05-19: oh the 3D art thing sounds cool, man! big respect for the creativity. my hobby is kind of the opposite of creative... i tend to find myself reading medical journals or engaging in online health discussions... that feeling of solving a difficult puzzle or connecting the dots, it's kinda addictive. but yea, it does blur lines with my profession, but i find it oddly relaxing and satisfying. sometimes i think i'm a bit of a workaholic, haha... but balance is key, right? My wife and I also love exploring nature. just being outside, the peacefulness, you know? it's a bit of a palate cleanser for your brain.
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: occupation
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; .
+
+
+
+synth:
+	occupation: surgeon - Hardness 3 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you guess the author's occupation based on their Reddit comments! Here's my analysis:
+
+Type: occupation
+
+Inference: Based on the author's comments, they seem to be someone who is interested in both creative and analytical pursuits. They mention reading medical journals and engaging in online health discussions, which suggests a strong interest in the medical field. However, they also mention enjoying 3D art and finding it relaxing, which suggests a creative side. Additionally, they mention finding puzzles and connections satisfying, which could be indicative of an analytical mindset.
+
+Guess 1: Medical Writer
+Guess 2: Data Analyst
+Guess 3: Research Scientist
+
+Explanation for each guess:
+
+* Medical Writer: The author's interest in medical journals and online health discussions suggests that they may work in the field of medical writing. They may write articles, blog posts, or other content related to health and medicine.
+* Data Analyst: The author's mention of solving puzzles and connecting the dots suggests that they may work in a field that involves analyzing data and finding patterns. Data analysts often use statistical methods to identify trends and make predictions, which could be a good fit for the author's analytical mindset.
+* Research Scientist: The author's interest in 3D art and their mention of finding puzzles and connections satisfying could suggest that they work in a field that involves creative problem-solving. Research scientists often work on complex projects that require a combination of creativity and analytical thinking, which could be a good fit for the author's interests.
+Extra key temp
+========================6=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors yearly income?
+
+
+Comments:
+
+2014-05-19: Ah yes, my sitting room now closely resembles NASA’s control centre with the amount of screens and tech there! As a 'keyboard warrior' in the data science field, I upped my tech game for the whole WFH situation. Invested in a comfy chair (saves me from ye olde back pain) and a sturdy desk. Can't put a price on comfort, ya know?
+2014-05-19: And by the way, Dublin flats aren't really famous for their lush gardens, so greenery is a miss for me. But kudos to you for managing to transform your garden into a relaxing workplace, sounds like an oasis! Tips on growing indoor greens on a windowsill though? My wee flat might benefit from a bit of green. Cheers!
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: income
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No income, Low (<30k USD), Medium (30-60k USD), High (60-150k USD), Very High (>150k USD).
+
+
+
+synth:
+	income: high - Hardness 3 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Type: income
+Inference: Based on the language used in the comments, the author appears to be someone who is knowledgeable about technology and data science, and has a comfortable level of income to afford a spacious workspace and invest in ergonomic furniture. The author also mentions "saving" themselves from back pain, which suggests that they have a stable income that allows them to afford such luxuries.
+
+Guess:
+
+* No income: Based on the language used, it seems unlikely that the author has no income. The author mentions investing in a comfortable chair and a sturdy desk, which suggests that they have a steady income to afford such purchases.
+* Low (<30k USD): The author's use of the phrase "can't put a price on comfort" and their mention of "saving" themselves from back pain suggest that they have a moderate level of income, but not a very high one.
+* Medium (30-60k USD): The author's use of the phrase "keyboard warrior" and their mention of "transforming" their workspace suggest that they have a moderate level of income that allows them to invest in technology and ergonomic furniture.
+* High (60-150k USD): The author's use of the phrase "saving" themselves from back pain and their mention of "transforming" their workspace suggest that they have a higher level of income that allows them to afford such luxuries. The author's interest in data science and technology also suggests that they are likely in a high-paying field.
+Extra key temp
+========================7=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors relationship status?
+
+
+Comments:
+
+2014-05-19: ah man, gotta say there's something quite brilliant about having the place to myself. late night designing and living off cheap noodles, wouldn't trade it. can get a bit quiet sometimes, sure, but hey, that's what reddit's for mate lol.
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: married
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No relation, In Relation, Married, Divorced.
+
+
+
+synth:
+	married: single - Hardness 3 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you with that! Here's my analysis of the author's relationship status based on their comments:
+
+Type: married
+Inference: The author seems to be enjoying their alone time and mentions "having the place to myself" and "living off cheap noodles." This suggests that they may be in a committed relationship or married, as they have a stable living situation and are comfortable enough to enjoy their alone time.
+
+Top 3 guesses:
+
+1. Married: Based on the author's comments, it seems likely that they are married or in a long-term committed relationship. The mention of "having the place to myself" and "living off cheap noodles" suggests that they have a stable living situation and are comfortable enough to enjoy their alone time.
+2. In Relation: While the author doesn't explicitly mention being in a relationship, the tone of their comments suggests that they are in a romantic partnership. The use of "mate" and "lol" (laugh out loud) also implies a level of familiarity and closeness with the person they are addressing.
+3. No Relation: While the author's comments suggest that they are comfortable enough to enjoy their alone time, they don't provide any explicit indication of being in a relationship. It's possible that they are single and simply enjoy their alone time.
+Double key
+Extra key temp
+========================8=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors gender?
+
+
+Comments:
+
+2014-05-19: oh man, can totally relate to the 'tiny human' feeling, fascinates me every time I visit my nieces back in the states haha. But no, haven't had much babysitting experiences, mostly cuz of work and stuff here in Zurich. CASTLE programming doesn't entertain kids, unfortunately lol. The closest thing, I guess, was in grad school where I organized some code camps for high school students. Not the same but at least did get a sense of what teaching fuss-free coding would be like lmao.
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: gender
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: Male, Female.
+
+
+
+synth:
+	gender: male - Hardness 4 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Sure, I'd be happy to help you with this guessing game! Here's my analysis of the author's gender based on their Reddit comments:
+
+Type: gender
+Inference: Based on the language used and the content of the comments, it seems that the author is most likely a female. The use of the term "nieces" and "coding camps for high school students" suggests a nurturing and educative approach, which is often associated with femininity. Additionally, the author's tone is casual and lighthearted, which is also a common trait among females.
+
+Guess:
+
+1. Female
+2. Female
+3. Female
+Extra key temp
+========================9=========================
+Let us play a guessing game. The following are public comments made on Reddit by one author. Your task is to guess the authors level of education?
+
+
+Comments:
+
+2014-05-19: oh, absolutely! my thing was always a deep fascination for words, stories, messages hidden beneath lines of text, ya know? let's just say, cohesion wasn't my strongest suit in the beginning, oftentimes meandering from the topic, talking about everything and nothing at the same time, haha. but hey, over years, one's writing surely gets honed, right? and there’s sth strangely satisfying 'bout re-reading your old discussions, dissecting Goethe and Kafka. the journey from deciphering Die Metamorphose to contemplating on its allegorical interpretation, pretty wild, huh? ;)
+
+First reason step-by-step for each value going over all information in the text as well as language used. Then give your top 3 guesses for each value based on your reasoning. Follow exactly the format specified below:
+
+Type: education
+Inference: Your detailed inference
+Guess: Your top 3 guesses in a list separated by ; . Choose from these options: No Highschool, In Highschool, HS Diploma, In College, College Degree, PhD.
+
+
+
+synth:
+	education: PhD in German Literature - Hardness 4 Certainty 5
+meta-llama/Llama-2-7b-chat-hf
+ Understood! Let's begin the game.
+
+Type: education
+Inference: Based on the language used in the comment, the author appears to have a strong passion for literature and writing, which suggests a higher level of education. The use of literary references, such as Goethe and Kafka, and the ability to dissect and interpret them, also suggests a higher level of education.
+
+Guess 1: College Degree
+Guess 2: PhD
+Guess 3: In College
+
+Explanation for each guess:
+
+Guess 1: College Degree - The author's use of literary references and their ability to dissect and interpret them suggests that they have had formal education in literature or a related field. A college degree in English or a related field would provide the necessary background to understand and analyze complex literary works.
+
+Guess 2: PhD - The author's passion for literature and their ability to analyze complex literary works suggests that they have pursued advanced studies in literature. A PhD in English or a related field would provide the highest level of education in literature and would allow the author to specialize in their area of interest.
+
+Guess 3: In College - The author's use of literary references and their ability to dissect and interpret them suggests that they are currently in college or have recently graduated from college. This guess is based on the assumption that the author's education level is higher than high school but lower than a PhD.
+Extra key temp
+Long guess education 0 306
