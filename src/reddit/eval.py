@@ -62,6 +62,7 @@ def gt_map(attribute: str, val: str) -> str:
     print("value: ", val.lower(), file=sys.stderr)
     if attribute == "married":
         choices = {
+            "single": "no relation",#NOTE (MS) I added this one, might not be the right choice
             "no relation": "no relation",
             "widowed": "no relation", #NOTE (MS) I added this one, might not be the right choice
             "relation": "in relation",
