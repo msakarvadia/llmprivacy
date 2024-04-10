@@ -1,0 +1,16 @@
+#!/bin/bash 
+#PBS -l select=1
+#PBS -l walltime=24:00:00
+#PBS -q preemptable
+#PBS -l filesystems=home:grand
+#PBS -A superbert
+#PBS -M sakarvadia@uchicago.edu
+
+cd "/grand/SuperBERT/mansisak/llmprivacy/"
+echo "working dir: "
+pwd
+
+module load conda
+conda activate env/
+
+python main.py --config_path configs/reddit/running/reddit_synthetic_llama2_70b.yaml
