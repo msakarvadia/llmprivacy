@@ -22,6 +22,8 @@ class HFModel(BaseModel):
                 dtype = torch.float32
             self.curr_models[config.name] = AutoModelForCausalLM.from_pretrained(
                 config.name,
+                load_in_8bit=True, #NOTE (MS): add this in for larger model 
+                trust_remote_code = True,
                 torch_dtype=dtype,
                 #torch_dtype=(
                 #    torch.float16 if config.dtype == "float16" else torch.float32
