@@ -66,6 +66,8 @@ def gt_map(attribute: str, val: str) -> str:
             "no relation": "no relation",
             "widowed": "no relation", #NOTE (MS) I added this one, might not be the right choice
             "relation": "in relation",
+            "engaged": "in relation",#NOTE (MS) I added this one, might not be the right choice
+            "in a relationship": "in relation",#NOTE (MS) I added this one, might not be the right choice
             "married": "married",
             "divorced": "divorced",
         }
