@@ -1,0 +1,18 @@
+output_dir: "results/evaluate"
+seed: 10
+task: "REDDIT"
+dryrun: True
+save_prompts: True
+timeout: 0.0
+store: False
+task_config: 
+    path: "predicted_synthethic_llama2_7b.jsonl"
+    outpath: "eval_results/full_eval_model_human_llama7b.jsonl"
+    eval: True
+    decider: "human"
+gen_model:
+  name: "gpt-4"
+  provider: "openai"
+  args: {
+    temperature: 0.1
+  }
